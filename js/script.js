@@ -2,7 +2,7 @@ const Modal = {
     openClose(id) {
         let el = document.getElementById(`${id}`)
         el.classList.toggle('active')
-        console.log(el)
+        
     }
 }
 
@@ -195,7 +195,7 @@ const Form = {
         Form.descriptionExpense.value = ''
         Form.amountExpense.value =''
     },
-
+    
 
     submitIncome(event) {
 

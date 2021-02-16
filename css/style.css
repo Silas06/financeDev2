@@ -1,0 +1,214 @@
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+html{
+    font-family: 'Kulim Park', sans-serif;
+    font-size: 93.75%;
+}
+
+body{
+    background:rgb(240, 236, 236);
+}
+
+header{
+    text-align: center;
+    background:#2D4A22;
+    padding:2rem 0 10rem;
+}
+
+
+/*----------buttons------------*/
+a, button{
+    height:40px;
+    background:#106e05;
+    width:48%;
+    color: #fff;
+    border:none;
+    opacity: .7;
+    cursor: pointer;
+}
+.cancel{
+    background:none;
+    border: solid 1px #c42924;
+    color:#f01f18;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration: none;
+}
+.form button:hover{
+    background:#1fb10b;
+}
+.form button:hover, .form a:hover{
+    opacity: 1;
+}
+
+/*----------------Global--------------*/
+
+
+.container{
+    width: min(90vw, 800px);
+    margin: auto;
+    padding-bottom:.6rem;
+}
+#balance{
+    margin-top: -7rem;
+}
+
+h2{
+    opacity: .5;
+    font-weight: 200;
+}
+/*--------------Balance------------*/
+
+.sr-only{
+    width: 1px;
+    height:1px;
+    padding:0;
+    margin:-1;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space:nowrap;
+    border-width: 0;
+    position: absolute;
+}
+
+.card{
+    background:#fff;
+    margin-bottom: 1rem;
+    padding:1.5rem 2rem ; 
+    box-shadow: .2rem .2rem 1rem rgb(54, 54, 54);
+    cursor: pointer;
+    border-radius:.25rem;
+}
+.card h3{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight: normal;
+    opacity: .5;
+    padding-bottom:.8rem;
+}
+
+.card p{
+    font-size: 2rem;
+    font-weight: 200;
+    opacity: .5;
+}
+.card p:hover, .card h3:hover{
+    opacity: 1;
+}
+
+.card.total {
+    background:rgb(14, 148, 1);
+    color:#fff;
+}
+#displayExpenses{
+    color:#f01f18;
+}
+
+/*---------------------Table ----------------------*/
+
+#table-data{
+    width: 100%;
+    border-spacing: 0 .1rem;
+}
+#table-data thead th {
+    text-align: left;
+    opacity: .7;
+    font-weight:normal;
+}
+#table-data tbody tr td, #table-data thead tr th{       
+    padding:.7rem .7rem;
+}
+#table-data tbody tr{
+    opacity: .6;
+}
+#table-data tbody tr:hover{
+    opacity: 1;
+}
+
+#table-data tbody tr img{
+    cursor: pointer;
+}
+
+#table-data tbody tr:nth-child(odd){
+    background:rgb(226, 225, 225);
+}
+#table{
+    display:block;
+    overflow-x: auto;
+}
+.income{
+    color:rgb(44, 194, 44);
+}
+.expense{
+    color:rgb(202, 5, 5);
+}
+
+
+/*-------------Footer------------*/
+footer{
+    text-align:center;
+    padding: 2rem 0 6rem;
+    opacity: .5;
+}
+
+/*-----------------Form-----------------*/
+.form-group{
+    margin: .8rem;
+}
+.form-group input, .form-group select{
+    padding: 1rem;
+    width: 100%;
+    background:rgb(243, 240, 240);
+    border-radius: .2rem;
+    border:none;
+}
+.actions{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+
+/*---------Modal--------*/
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    z-index: 99;
+}
+.modal{
+    background: #fff;
+    max-width:500px;
+    width:90%;
+    position:relative;
+    padding:2.4rem;
+    margin: auto;
+}
+.active{
+    opacity:1;
+    visibility: visible;
+}
+
+@media only screen and ( min-width: 800px){
+    #balance{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:2rem;
+    }
+}

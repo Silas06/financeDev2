@@ -289,6 +289,7 @@ const App = {
             DOM.addTransaction(transaction, index)
         })
 
+        Storage.set()
         DOM.updateBalance()
     },
 

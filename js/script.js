@@ -19,13 +19,13 @@ const Storage = {
 
 const Utils = {
     formatCurrency(value) {
-        let signal = value < 0 ? '-' : ''        
+        let signal = value < 0 ? '-' : ''
         value = Number(value) / 100
         value.toFixed(2)
         value = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
-        
-        return  value
+
+        return value
     },
 
     calcProfit(transaction) {
@@ -172,7 +172,7 @@ const Form = {
     },
 
     validateField() {
-        if (Form.descriptionIncome.value === '' ||
+        if (Form.descriptionIncome.value == '' ||
             Form.profit.value == '' ||
             Form.amountIncome.value == '') {
             throw new Error('Preencher todos campos!')
@@ -180,7 +180,7 @@ const Form = {
     },
 
     validateFieldExp() {
-        if (Form.descriptionExpense.value === '' ||
+        if (Form.descriptionExpense.value == '' ||
             Form.amountExpense.value == '') {
             throw new Error('Preencher todos campos!')
         }
@@ -191,6 +191,11 @@ const Form = {
         Form.profit.value = ''
         Form.amountIncome.value = ''
     },
+    clearFieldExp() {
+        Form.descriptionExpense.value = ''
+        Form.amountExpense.value =''
+    },
+
 
     submitIncome(event) {
 
@@ -224,7 +229,7 @@ const Form = {
             let transaction = Form.formatExpense()
             Transaction.add(transaction)
 
-            Form.clearField()
+            Form.clearFieldExp()
 
             Modal.openClose('expensesModal')
 
